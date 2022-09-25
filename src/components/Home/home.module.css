@@ -1,0 +1,44 @@
+.container {
+}
+
+.imgContainer {
+  height: 90vh;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+}
+.imgEffects {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.693),
+    rgba(0, 0, 0, 0.423),
+    rgba(0, 0, 0, 0)
+  );
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.title {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  font-weight: bold;
+  bottom: 50%;
+  left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.title:hover {
+  background-color: yellow;
+  transition: all 1s ease;
+}
+.title:hover .marvel {
+  transition: 1s;
+}
+.title:hover {
+  color: red;
+}
+.marvel {
+  font-weight: bolder;
+  color: red;
+}
