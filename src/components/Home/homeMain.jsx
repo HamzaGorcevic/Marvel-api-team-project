@@ -1,12 +1,12 @@
 import HomePage from "./HomeBackground";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Card from "./SingleCard";
 import NavbarPage from "../Layout/navbar";
+import { MyContext } from "../context";
 
 export default function HomeMain() {
-  const [search, setSearch] = useState("");
-  const [value, setValue] = useState("");
+  const { search } = useContext(MyContext);
   const [url, setUrl] = useState(
     `https://gateway.marvel.com/v1/public/characters?`
   );
@@ -28,22 +28,9 @@ export default function HomeMain() {
     fetch();
   }, [url, search]);
 
-  function handleChanger(el) {
-    setValue(el.target.value);
-    console.log(el.target.value);
-  }
-  function submitChanger() {
-    setSearch(value);
-  }
-
   return (
     <div>
-      <HomePage />
       <div style={{ top: 600, position: "relative" }}>
-        <NavbarPage
-          handleChanger={handleChanger}
-          submitChanger={submitChanger}
-        />
         <div
           className="d-flex flex-wrap justify-content-center"
           style={{ background: "white", height: "auto" }}

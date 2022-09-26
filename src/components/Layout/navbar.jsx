@@ -1,5 +1,14 @@
-export default function NavbarPage({ handleChanger, submitChanger }) {
-  console.log(handleChanger);
+import { MyContext } from "../context";
+import { useContext } from "react";
+
+export default function NavbarPage() {
+  const { setValue, setSearch, value } = useContext(MyContext);
+  function handleChanger(el) {
+    setValue(el.target.value);
+  }
+  function submitChanger() {
+    setSearch(value);
+  }
   return (
     <nav
       class="navbar navbar-expand-lg navbar-light bg-danger"
