@@ -3,7 +3,7 @@ export default function NavbarPage({ handleChanger, submitChanger }) {
   return (
     <nav
       class="navbar navbar-expand-lg navbar-light bg-danger"
-      style={{ position: "sticky", top: 1 }}
+      style={{ position: "sticky", top: 1, zIndex: 3 }}
     >
       <a class="navbar-brand" href="#">
         Navbar

@@ -35,6 +35,7 @@ export default function HomeMain() {
   function submitChanger() {
     setSearch(value);
   }
+
   return (
     <div>
       <HomePage />
@@ -45,7 +46,7 @@ export default function HomeMain() {
         />
         <div
           className="d-flex flex-wrap justify-content-center"
-          style={{ background: "blue", height: "auto" }}
+          style={{ background: "white", height: "auto" }}
         >
           {data.map((item, index) => {
             return <Card item={item} index={index} />;
