@@ -7,14 +7,15 @@ import { Circles } from "react-loader-spinner";
 
 export default function SeriesPage() {
   const location = useLocation();
-  console.log(location.state.id, location.state.id);
-  console.log("ssd");
+  const [loader, setLoader] = useState(false);
+
   const [data, setData] = useState([]);
   const [url, setUrl] = useState(
     `https://gateway.marvel.com/v1/public/characters/${location.state.id}/series`
   );
 
   useEffect(() => {
+    setLoader(false);
     async function fetch() {
       let res = await axios.get(url, {
         params: {
@@ -24,10 +25,11 @@ export default function SeriesPage() {
         },
       });
       setData(res.data.data.results);
+      setLoader(true);
     }
     fetch();
   }, [url]);
-
+  console.log(data, "sad");
   function MoveLeft() {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 800;
@@ -38,43 +40,68 @@ export default function SeriesPage() {
   }
   return (
     <div>
-      {data.length >= 1 ? (
-        <div
-          className="container-fluid bg-dark"
-          style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
-        >
-          <h1 className="text-white">Series</h1>
+      {data.length > 1 ? (
+        loader && data.length > 1 ? (
           <div
-            className={`d-flex align-items-center`}
-            style={{ position: "relative" }}
+            className="container-fluid bg-dark"
+            style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
           >
-            <i
-              onClick={MoveLeft}
-              className={` bi bi-arrow-left-circle-fill text-white h1`}
-              style={{ position: "absolute", left: "0", zIndex: 4 }}
-            ></i>
+            <h1 className="text-white">Series</h1>
             <div
-              id="slider"
-              style={{
-                overflow: "hidden",
-                scrollBehavior: "smooth",
-                position: "relative",
-              }}
+              className={`d-flex align-items-center`}
+              style={{ position: "relative" }}
             >
-              <div className={`d-flex py-5 `} style={{ position: "relative" }}>
-                {data.map((items) => {
-                  return <ChosenSerie items={items} />;
-                })}
+              <i
+                onClick={MoveLeft}
+                className={` bi bi-arrow-left-circle-fill text-white h1`}
+                style={{ position: "absolute", left: "0", zIndex: 4 }}
+              ></i>
+              <div
+                id="slider"
+                style={{
+                  overflow: "hidden",
+                  scrollBehavior: "smooth",
+                  position: "relative",
+                }}
+              >
+                <div
+                  className={`d-flex py-5 `}
+                  style={{ position: "relative" }}
+                >
+                  {data.map((items) => {
+                    return <ChosenSerie items={items} />;
+                  })}
+                </div>
               </div>
-            </div>
 
-            <i
-              onClick={MoveRight}
-              className={`bi bi-arrow-right-circle-fill text-white h1`}
-              style={{ position: "absolute", right: "0", zIndex: 4 }}
-            ></i>
+              <i
+                onClick={MoveRight}
+                className={`bi bi-arrow-right-circle-fill text-white h1`}
+                style={{ position: "absolute", right: "0", zIndex: 4 }}
+              ></i>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div
+            style={{
+              height: "100vh",
+              background: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Circles
+              height="80"
+              width="80"
+              radius="9"
+              color="green"
+              ariaLabel="loading"
+              wrapperStyle
+              wrapperClass
+            />
+          </div>
+        )
       ) : (
         <div
           style={{
@@ -85,15 +112,7 @@ export default function SeriesPage() {
             justifyContent: "center",
           }}
         >
-          <Circles
-            height="80"
-            width="80"
-            radius="9"
-            color="green"
-            ariaLabel="loading"
-            wrapperStyle
-            wrapperClass
-          />
+          Series not found :(
         </div>
       )}
     </div>

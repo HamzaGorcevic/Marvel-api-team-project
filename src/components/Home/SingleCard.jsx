@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Card({ item, index }) {
   const navigate = useNavigate();
+  console.log(item);
   return (
     <div
       key={index}
@@ -23,7 +24,9 @@ export default function Card({ item, index }) {
         alt=""
       />
       <div className="card-body">
-        <h5 className="card-title">{item.name}</h5>
+        <h5 className="card-title">
+          {item.name ? item.name : item.title ? item.title : item.fullName}
+        </h5>
       </div>
     </div>
   );

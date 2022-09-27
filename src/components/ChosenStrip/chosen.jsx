@@ -21,7 +21,6 @@ export default function Chosen() {
         },
       });
       setData(res.data.data.results);
-      console.log(data, "hello");
     }
     fetch();
   }, [url]);

@@ -5,35 +5,41 @@ import { MyContext } from "../context";
 import { Circles } from "react-loader-spinner";
 
 export default function HomeMain() {
-  const { search } = useContext(MyContext);
+  const { search, genre } = useContext(MyContext);
   const [page, setPage] = useState(0);
   const [lastPage, setLastPage] = useState(20);
   const [loader, setLoader] = useState(false);
-  const [url, setUrl] = useState(
-    `https://gateway.marvel.com/v1/public/characters?`
-  );
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetch() {
       setLoader(true);
 
-      let res = await axios.get(url, {
-        params: {
-          limit: lastPage,
-          ts: "1",
-          apikey: "6dd47b36beb6cba63846697b5616e93e",
-          hash: "39e75edb8427b1e58fa9052ef6640cb3",
-          ...(search ? { nameStartsWith: search } : {}),
-        },
-      });
+      let res = await axios.get(
+        `https://gateway.marvel.com/v1/public/${genre}?`,
+        {
+          params: {
+            limit: lastPage,
+            ts: "1",
+            apikey: "6dd47b36beb6cba63846697b5616e93e",
+            hash: "39e75edb8427b1e58fa9052ef6640cb3",
+            ...(search && genre !== "comics"
+              ? { nameStartsWith: search }
+              : search && genre
+              ? { titleStartsWith: search }
+              : {}),
+          },
+        }
+      );
 
       setData(res.data.data.results.slice(page, lastPage));
+      console.log(data);
       setLoader(false);
     }
 
     fetch();
-  }, [url, search, page]);
+  }, [search, page, genre]);
   function moveToNextPage() {
     setPage(page + 20);
     setLastPage(lastPage + 20);
@@ -87,7 +93,7 @@ export default function HomeMain() {
             </button>
             <button
               className="btn btn-success"
-              disabled={lastPage === 100 ? "true" : ""}
+              disabled={lastPage !== 100 && data.length >= 20 ? "" : "false"}
               onClick={moveToNextPage}
             >
               Go to next page
