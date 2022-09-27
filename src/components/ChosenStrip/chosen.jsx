@@ -50,6 +50,7 @@ export default function Chosen() {
                 })}
               </div>
               <Link
+                className="btn btn-outline-danger"
                 to={"/series"}
                 state={{ id: items.id, image: items.thumbnail?.path }}
               >

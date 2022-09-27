@@ -3,6 +3,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Chosen from "../ChosenStrip/chosen";
 import ChosenSerie from "../ChosenSerie/chosenSerie";
+import { Circles } from "react-loader-spinner";
 
 export default function SeriesPage() {
   const location = useLocation();
@@ -23,8 +24,6 @@ export default function SeriesPage() {
         },
       });
       setData(res.data.data.results);
-      console.log(res.data.data.results);
-      console.log(data, "hello in series");
     }
     fetch();
   }, [url]);
@@ -86,7 +85,15 @@ export default function SeriesPage() {
             justifyContent: "center",
           }}
         >
-          <h1>LOADIN...</h1>
+          <Circles
+            height="80"
+            width="80"
+            radius="9"
+            color="green"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+          />
         </div>
       )}
     </div>

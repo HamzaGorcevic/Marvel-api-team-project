@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function ChosenSerie({ items }) {
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => {
+        navigate("/singleSerie", { state: { items } });
+      }}
       className=" ml-3"
       style={{
         height: 600,

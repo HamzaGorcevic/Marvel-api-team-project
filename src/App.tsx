@@ -6,6 +6,7 @@ import Chosen from "./components/ChosenStrip/chosen";
 import SeriesPage from "./components/Series/seriesIndex";
 import NavbarPage from "./components/Layout/navbar";
 import ContextFunction from "./components/context";
+import SingleSeriePage from "./components/SingleSerieFromChosen/singleSerieIndex";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<HomeMain />} />
           <Route path="/chose/:id" element={<Chosen />} />
           <Route path="series" element={<SeriesPage />} />
+          <Route path="/singleSerie" element={<SingleSeriePage />} />
         </Routes>
       </ContextFunction>
     </BrowserRouter>
