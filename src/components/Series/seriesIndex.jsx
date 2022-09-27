@@ -38,41 +38,57 @@ export default function SeriesPage() {
     slider.scrollLeft = slider.scrollLeft + 800;
   }
   return (
-    <div
-      className="container-fluid bg-dark"
-      style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
-    >
-      <h1 className="text-white">Series</h1>
-      <div
-        className={`d-flex align-items-center`}
-        style={{ position: "relative" }}
-      >
-        <i
-          onClick={MoveLeft}
-          className={` bi bi-arrow-left-circle-fill text-white h1`}
-          style={{ position: "absolute", left: "0", zIndex: 4 }}
-        ></i>
+    <div>
+      {data.length >= 1 ? (
         <div
-          id="slider"
-          style={{
-            overflow: "hidden",
-            scrollBehavior: "smooth",
-            position: "relative",
-          }}
+          className="container-fluid bg-dark"
+          style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
         >
-          <div className={`d-flex py-5 `} style={{ position: "relative" }}>
-            {data.map((items) => {
-              return <ChosenSerie items={items} />;
-            })}
+          <h1 className="text-white">Series</h1>
+          <div
+            className={`d-flex align-items-center`}
+            style={{ position: "relative" }}
+          >
+            <i
+              onClick={MoveLeft}
+              className={` bi bi-arrow-left-circle-fill text-white h1`}
+              style={{ position: "absolute", left: "0", zIndex: 4 }}
+            ></i>
+            <div
+              id="slider"
+              style={{
+                overflow: "hidden",
+                scrollBehavior: "smooth",
+                position: "relative",
+              }}
+            >
+              <div className={`d-flex py-5 `} style={{ position: "relative" }}>
+                {data.map((items) => {
+                  return <ChosenSerie items={items} />;
+                })}
+              </div>
+            </div>
+
+            <i
+              onClick={MoveRight}
+              className={`bi bi-arrow-right-circle-fill text-white h1`}
+              style={{ position: "absolute", right: "0", zIndex: 4 }}
+            ></i>
           </div>
         </div>
-
-        <i
-          onClick={MoveRight}
-          className={`bi bi-arrow-right-circle-fill text-white h1`}
-          style={{ position: "absolute", right: "0", zIndex: 4 }}
-        ></i>
-      </div>
+      ) : (
+        <div
+          style={{
+            height: "100vh",
+            background: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1>LOADIN...</h1>
+        </div>
+      )}
     </div>
   );
 }
