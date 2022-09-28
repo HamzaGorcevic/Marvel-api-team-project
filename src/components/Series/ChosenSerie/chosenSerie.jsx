@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function ChosenSerie({ items }) {
   const navigate = useNavigate();
+  console.log(items);
+
   return (
     <div
       onClick={() => {

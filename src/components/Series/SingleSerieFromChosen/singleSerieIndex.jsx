@@ -1,9 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SingleSeriePage() {
+  const navigate = useNavigate();
   const location = useLocation();
   let item = location.state.items;
-  console.log(item);
   return (
     <div
       className="container-fluid bg-dark d-flex flex-direction-column align-items-center"
@@ -24,6 +24,14 @@ export default function SingleSeriePage() {
             {item.title ? item.title : item.name}
           </h1>
           <p>{item.description}</p>
+          <button
+            className="btn btn-outline-danger"
+            onClick={() => {
+              navigate("/subgenre", { state: item.id });
+            }}
+          >
+            Go to characters
+          </button>
           <div className="d-flex justify-content-between">
             {item.creators?.items.slice(0, 3).map((author) => {
               return (
