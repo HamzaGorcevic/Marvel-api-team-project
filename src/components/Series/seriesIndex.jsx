@@ -1,4 +1,4 @@
-import ChosenSerie from "./ChosenSerie/chosenSerie";
+import ChosenSerie from "./ChosenSeries/chosenSeries";
 import { Circles } from "react-loader-spinner";
 
 export default function SeriesPage({ loader, data }) {

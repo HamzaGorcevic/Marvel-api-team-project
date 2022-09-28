@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Card({ item, index }) {
   const navigate = useNavigate();
-  console.log(item);
   return (
     <div
       key={index}
@@ -16,7 +15,7 @@ export default function Card({ item, index }) {
     >
       <img
         onClick={() => {
-          navigate(`/chose/${item.id}`);
+          navigate(`/chose/${item.id}`, { state: item.resourceURI });
         }}
         style={{ height: 300, boxShadow: "3px 3px 10px black" }}
         className="card-img-top"

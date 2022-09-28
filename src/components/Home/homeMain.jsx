@@ -34,7 +34,7 @@ export default function HomeMain() {
       );
 
       setData(res.data.data.results.slice(page, lastPage));
-      console.log(data);
+      console.log(data, "home");
       setLoader(false);
     }
 

@@ -1,17 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-
-import { MyContext } from "../context";
 import SeriesPage from "./seriesIndex";
 
 export default function ApiForGenre() {
-  const { genre } = useContext(MyContext);
   const location = useLocation();
   const [loader, setLoader] = useState(false);
 
   const [data, setData] = useState([]);
-  const [url, setUrl] = useState(location.state);
+  const [url] = useState(location.state);
   console.log(location.url, "why undef", location.state);
 
   useEffect(() => {

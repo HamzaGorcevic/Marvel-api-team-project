@@ -7,7 +7,7 @@ export default function ChosenSerie({ items }) {
   return (
     <div
       onClick={() => {
-        navigate("/singleSerie", { state: { items } });
+        navigate(`/chose/${items.id}`, { state: items.resourceURI });
       }}
       className=" ml-3"
       style={{
