@@ -1,7 +1,7 @@
 import ChosenSerie from "./ChosenSeries/chosenSeries";
 import { Circles } from "react-loader-spinner";
 
-export default function SeriesPage({ loader, data }) {
+export default function SeriesPage({ loader, data, title }) {
   function MoveLeft() {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 800;
@@ -18,7 +18,13 @@ export default function SeriesPage({ loader, data }) {
           className="container-fluid bg-dark"
           style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
         >
-          <h1 className="text-white">Series</h1>
+          <h1 className="text-white">
+            {title
+              .match(/comics|characters|series/gi)
+              .reverse()
+              .join(" of this  ")
+              .slice(0, -1)}
+          </h1>
           <div
             className={`d-flex align-items-center`}
             style={{ position: "relative" }}

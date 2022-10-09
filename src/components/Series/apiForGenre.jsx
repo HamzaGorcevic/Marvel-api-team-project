@@ -9,7 +9,6 @@ export default function ApiForGenre() {
 
   const [data, setData] = useState([]);
   const [url] = useState(location.state);
-  console.log(location.url, "why undef", location.state);
 
   useEffect(() => {
     setLoader(false);
@@ -26,5 +25,5 @@ export default function ApiForGenre() {
     }
     fetch();
   }, [url]);
-  return <SeriesPage loader={loader} data={data} />;
+  return <SeriesPage loader={loader} data={data} title={url} />;
 }

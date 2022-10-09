@@ -1,0 +1,8 @@
+.singleCard:hover {
+  color: red;
+  rotate: 2deg;
+  transition: all 0.2s ease-in-out;
+}
+.singleCard {
+  cursor: pointer;
+}

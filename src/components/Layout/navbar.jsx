@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function NavbarPage() {
   const navigate = useNavigate();
-  const { setValue, setSearch, value, genre, setGenre } = useContext(MyContext);
+  const { setValue, setSearch, value, setGenre, setPage, setLastPage } =
+    useContext(MyContext);
   function handleChanger(el) {
     setValue(el.target.value);
   }
@@ -82,41 +83,6 @@ export default function NavbarPage() {
             Creators
           </h5>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            Link
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">
-              Action
-            </a>
-            <a class="dropdown-item" href="#">
-              Another action
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              Something else here
-            </a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">
-            Disabled
-          </a>
-        </li>
       </ul>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -135,6 +101,8 @@ export default function NavbarPage() {
           <Link
             class="btn btn-outline-warning my-2 my-sm-0"
             onClick={(el) => {
+              setPage(0);
+              setLastPage(20);
               navigate("/");
               submitChanger();
               el.preventDefault();

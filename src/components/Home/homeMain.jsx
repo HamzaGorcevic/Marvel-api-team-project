@@ -5,9 +5,9 @@ import { MyContext } from "../context";
 import { Circles } from "react-loader-spinner";
 
 export default function HomeMain() {
-  const { search, genre } = useContext(MyContext);
-  const [page, setPage] = useState(0);
-  const [lastPage, setLastPage] = useState(20);
+  const { search, genre, setPage, setLastPage, page, lastPage } =
+    useContext(MyContext);
+
   const [loader, setLoader] = useState(false);
 
   const [data, setData] = useState([]);
@@ -83,7 +83,7 @@ export default function HomeMain() {
           {data.map((item, index) => {
             return <Card item={item} index={index} />;
           })}
-          <div className="d-flex p-4 justify-content-around w-75">
+          <div className="d-flex p-4 justify-content-around w-100">
             <button
               className="btn btn-success"
               disabled={page === 0 ? "true" : ""}

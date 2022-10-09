@@ -1,17 +1,13 @@
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import NavbarPage from "../../Layout/navbar";
 import { MyContext } from "../../context";
 
 export default function Chosen() {
-  const { genre } = useContext(MyContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [data, setData] = useState([]);
-  const param = useParams();
   const [url, setUrl] = useState(`${location.state}?`);
-  console.log(location.state);
   useEffect(() => {
     async function fetch() {
       let res = await axios.get(url, {
@@ -22,7 +18,6 @@ export default function Chosen() {
         },
       });
       setData(res.data.data.results);
-      console.log(genre);
     }
     fetch();
   }, [url]);

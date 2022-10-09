@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import "./home.css";
 
 export default function Card({ item, index }) {
   const navigate = useNavigate();
   return (
     <div
       key={index}
-      className="card m-2 d-flex align-items-end"
+      className="card m-2 d-flex align-items-end singleCard"
       style={{
         width: " 17rem",
         background: "none",
