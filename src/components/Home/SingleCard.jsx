@@ -3,6 +3,7 @@ import "./home.css";
 
 export default function Card({ item, index }) {
   const navigate = useNavigate();
+  console.log(item, "single item");
   return (
     <div
       key={index}
@@ -24,9 +25,25 @@ export default function Card({ item, index }) {
         alt=""
       />
       <div className="card-body">
-        <h5 className="card-title">
-          {item.name ? item.name : item.title ? item.title : item.fullName}
+        <h5
+          className="card-title"
+          style={{ color: "yellow", fontWeight: "bold" }}
+        >
+          {item.name
+            ? item.name?.slice(0, 15)
+            : item.title?.slice(0, 15)
+            ? item.title
+            : item.fullName?.slice(0, 15)}
         </h5>
+        <h6
+          className="card-title"
+          style={{ position: "absolute", bottom: 0, left: 2, color: "white" }}
+        >
+          {item.modified
+            ?.slice(0, 10)
+            ?.replace(/-/g, "/")
+            ?.replace(/\/0001/, "1982")}
+        </h6>
       </div>
     </div>
   );

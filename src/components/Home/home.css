@@ -1,8 +1,10 @@
 .singleCard:hover {
   color: red;
-  rotate: 2deg;
+  rotate: 3deg;
   transition: all 0.2s ease-in-out;
+  opacity: 1;
 }
 .singleCard {
   cursor: pointer;
+  opacity: 0.9;
 }

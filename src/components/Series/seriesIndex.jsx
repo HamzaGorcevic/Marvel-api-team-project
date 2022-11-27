@@ -15,14 +15,14 @@ export default function SeriesPage({ loader, data, title }) {
     <div>
       {loader ? (
         <div
-          className="container-fluid bg-dark"
+          className="container-fluid bg-warning"
           style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
         >
           <h1 className="text-white">
             {title
               .match(/comics|characters|series/gi)
               .reverse()
-              .join(" of this  ")
+              .join(" of this ")
               .slice(0, -1)}
           </h1>
           <div
@@ -60,10 +60,13 @@ export default function SeriesPage({ loader, data, title }) {
         <div
           style={{
             height: "100vh",
+            width: "100vw",
             background: "white",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            position: "absolute",
+            top: 0,
           }}
         >
           <Circles

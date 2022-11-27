@@ -34,26 +34,26 @@ export default function HomeMain() {
       );
 
       setData(res.data.data.results.slice(page, lastPage));
-      console.log(data, "home");
       setLoader(false);
     }
 
     fetch();
   }, [search, page, genre]);
+
   function moveToNextPage() {
-    setPage(page + 20);
-    setLastPage(lastPage + 20);
+    setPage(page + 10);
+    setLastPage(lastPage + 10);
   }
   function moveToPrevPage() {
-    setPage(page - 20);
-    setLastPage(lastPage - 20);
+    setPage(page - 10);
+    setLastPage(lastPage - 10);
   }
   return (
     <div>
       <div style={{ top: 600, position: "relative" }}>
         <div
           className="d-flex flex-wrap justify-content-center"
-          style={{ background: "white", height: "auto" }}
+          style={{ background: "#4169E1", height: "auto" }}
         >
           {loader ? (
             <div
@@ -63,7 +63,7 @@ export default function HomeMain() {
                 height: "100vh",
                 position: "absolute",
                 bottom: "0",
-                background: "#fcfcfc4c",
+                background: "#fcfcfc59",
                 zIndex: 10,
               }}
             >
@@ -71,7 +71,7 @@ export default function HomeMain() {
                 height="80"
                 width="80"
                 radius="9"
-                color="green"
+                color="red"
                 ariaLabel="loading"
                 wrapperStyle
                 wrapperClass
@@ -85,15 +85,15 @@ export default function HomeMain() {
           })}
           <div className="d-flex p-4 justify-content-around w-100">
             <button
-              className="btn btn-success"
+              className="btn btn-danger"
               disabled={page === 0 ? "true" : ""}
               onClick={moveToPrevPage}
             >
               Go to prev page
             </button>
             <button
-              className="btn btn-success"
-              disabled={lastPage !== 100 && data.length >= 20 ? "" : "false"}
+              className="btn btn-danger"
+              disabled={lastPage !== 100 && data.length >= 10 ? "" : "false"}
               onClick={moveToNextPage}
             >
               Go to next page

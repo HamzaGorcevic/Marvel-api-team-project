@@ -1,8 +1,8 @@
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { MyContext } from "../../context";
 
+import spider from "./spider.jpg";
 export default function Chosen() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,8 +24,14 @@ export default function Chosen() {
 
   return (
     <div
-      className="container-fluid bg-dark d-flex flex-direction-column align-items-center"
-      style={{ height: "100vh" }}
+      className="container-fluid d-flex flex-direction-column align-items-center"
+      style={{
+        minHeight: "110vh",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundImage: `url(${spider})`,
+      }}
     >
       {data.map((items) => {
         return (
@@ -34,66 +40,69 @@ export default function Chosen() {
             <div>
               <img
                 className=""
-                style={{ height: 400, width: 300 }}
+                style={{ height: 400, width: 300, borderRadius: 15 }}
                 src={`${items.thumbnail?.path}.${items.thumbnail?.extension}`}
                 alt=""
               />
-              <p>{items.modified?.slice(0, 10)}</p>
+              <p className="text-white">{items.modified?.slice(0, 10)}</p>
             </div>
             <div className="w-50 text-light" style={{ height: 400 }}>
-              <h1>{items.title ? items.title : items.name}</h1>
-              <p>{items.description}</p>
+              <h1 className="bg-danger">
+                {items.title ? items.title : items.name}
+              </h1>
+              <p className="my-5"> {items.description}</p>
 
-              {items.series?.resourceURI || items.series?.collectionURI ? (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => {
-                    navigate("/series", {
-                      ...(items.series?.resourceURI
-                        ? { state: items.series?.resourceURI }
-                        : { state: items.series.collectionURI }),
-                    });
-                  }}
-                >
-                  Go to series
-                </button>
-              ) : (
-                ""
-              )}
-              {items.comics?.resourceURI || items.comics?.collectionURI ? (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => {
-                    navigate("/series", {
-                      ...(items.comics?.resourceURI
-                        ? { state: items.comics?.resourceURI }
-                        : { state: items.comics.collectionURI }),
-                    });
-                  }}
-                >
-                  Go to comics
-                </button>
-              ) : (
-                ""
-              )}
-              {items.characters?.resourceURI ||
-              items.characters?.collectionURI ? (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => {
-                    navigate("/series", {
-                      ...(items.characters?.resourceURI
-                        ? { state: items.characters?.resourceURI }
-                        : { state: items.characters.collectionURI }),
-                    });
-                  }}
-                >
-                  Go to characters
-                </button>
-              ) : (
-                ""
-              )}
-
+              <div className="d-flex flex-column" style={{ width: "500px" }}>
+                {items.series?.resourceURI || items.series?.collectionURI ? (
+                  <button
+                    className="btn btn-outline-danger my-2"
+                    onClick={() => {
+                      navigate("/series", {
+                        ...(items.series?.resourceURI
+                          ? { state: items.series?.resourceURI }
+                          : { state: items.series.collectionURI }),
+                      });
+                    }}
+                  >
+                    Go to series
+                  </button>
+                ) : (
+                  ""
+                )}
+                {items.comics?.resourceURI || items.comics?.collectionURI ? (
+                  <button
+                    className="btn btn-outline-danger my-2"
+                    onClick={() => {
+                      navigate("/series", {
+                        ...(items.comics?.resourceURI
+                          ? { state: items.comics?.resourceURI }
+                          : { state: items.comics.collectionURI }),
+                      });
+                    }}
+                  >
+                    Go to comics
+                  </button>
+                ) : (
+                  ""
+                )}
+                {items.characters?.resourceURI ||
+                items.characters?.collectionURI ? (
+                  <button
+                    className="btn btn-outline-danger my-2"
+                    onClick={() => {
+                      navigate("/series", {
+                        ...(items.characters?.resourceURI
+                          ? { state: items.characters?.resourceURI }
+                          : { state: items.characters.collectionURI }),
+                      });
+                    }}
+                  >
+                    Go to characters
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
               <div className="d-flex justify-content-between">
                 {items.creators?.items.slice(0, 3).map((author) => {
                   return (

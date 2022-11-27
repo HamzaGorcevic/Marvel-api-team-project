@@ -8,7 +8,7 @@ export default function ContextFunction({ children }) {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("characters");
   const [page, setPage] = useState(0);
-  const [lastPage, setLastPage] = useState(20);
+  const [lastPage, setLastPage] = useState(10);
   return (
     <MyContext.Provider
       value={{

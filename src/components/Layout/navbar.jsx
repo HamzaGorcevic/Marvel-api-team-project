@@ -24,6 +24,8 @@ export default function NavbarPage() {
           setGenre("characters");
           setSearch("");
           setValue("");
+          setPage(0);
+          setLastPage(10);
         }}
       >
         MARVEL
@@ -49,6 +51,8 @@ export default function NavbarPage() {
             setGenre("comics");
             setSearch("");
             setValue("");
+            setPage(0);
+            setLastPage(10);
           }}
         >
           <h5 class="nav-link text-warning" href="#">
@@ -63,6 +67,8 @@ export default function NavbarPage() {
             setGenre("characters");
             setSearch("");
             setValue("");
+            setPage(0);
+            setLastPage(10);
           }}
         >
           <h5 class="nav-link text-warning" href="#">
@@ -77,6 +83,8 @@ export default function NavbarPage() {
             setGenre("creators");
             setSearch("");
             setValue("");
+            setPage(0);
+            setLastPage(10);
           }}
         >
           <h5 class="nav-link text-warning" href="#">
@@ -102,8 +110,8 @@ export default function NavbarPage() {
             class="btn btn-outline-warning my-2 my-sm-0"
             onClick={(el) => {
               setPage(0);
-              setLastPage(20);
-              navigate("/");
+              setLastPage(10);
+              navigate("#");
               submitChanger();
               el.preventDefault();
             }}
