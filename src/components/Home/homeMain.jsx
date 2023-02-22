@@ -11,13 +11,15 @@ export default function HomeMain() {
   const [loader, setLoader] = useState(false);
 
   const [data, setData] = useState([]);
-
+  console.log(
+    "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDLJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ"
+  );
   useEffect(() => {
     async function fetch() {
       setLoader(true);
 
       let res = await axios.get(
-        `https://gateway.marvel.com/v1/public/${genre}?`,
+        `http://gateway.marvel.com/v1/public/${genre}?`,
         {
           params: {
             limit: lastPage,

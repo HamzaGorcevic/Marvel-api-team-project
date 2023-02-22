@@ -7,7 +7,8 @@ export default function Chosen() {
   const navigate = useNavigate();
   const location = useLocation();
   const [data, setData] = useState([]);
-  const [url, setUrl] = useState(`${location.state}?`);
+  const [url, setUrl] = useState(`${location.state}`);
+  console.log(url, "https or http");
   useEffect(() => {
     async function fetch() {
       let res = await axios.get(url, {

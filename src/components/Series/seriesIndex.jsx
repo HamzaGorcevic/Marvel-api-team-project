@@ -16,7 +16,7 @@ export default function SeriesPage({ loader, data, title }) {
       {loader ? (
         <div
           className="container-fluid bg-warning"
-          style={{ height: "auto", paddingTop: "40px", fontWeight: "bold" }}
+          style={{ minHeight: "100vh", paddingTop: "40px", fontWeight: "bold" }}
         >
           <h1 className="text-white">
             {title

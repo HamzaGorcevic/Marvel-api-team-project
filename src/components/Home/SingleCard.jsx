@@ -3,7 +3,6 @@ import "./home.css";
 
 export default function Card({ item, index }) {
   const navigate = useNavigate();
-  console.log(item, "single item");
   return (
     <div
       key={index}

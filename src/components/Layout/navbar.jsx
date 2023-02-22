@@ -111,7 +111,7 @@ export default function NavbarPage() {
             onClick={(el) => {
               setPage(0);
               setLastPage(10);
-              navigate("#");
+              navigate("/");
               submitChanger();
               el.preventDefault();
             }}
