@@ -27,7 +27,7 @@ export default function Chosen() {
     <div
       className="container-fluid d-flex flex-direction-column align-items-center"
       style={{
-        minHeight: "110vh",
+        minHeight: "120vh",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -36,27 +36,30 @@ export default function Chosen() {
     >
       {data.map((items) => {
         return (
-          <div className="d-flex justify-content-around w-100 ">
-            {console.log(items)}
-            <div>
+          <div className="d-flex flex-column  justify-content-md-around  flex-md-row  w-100 ">
+            <div className="container d-flex justify-content-center">
               <img
-                className=""
-                style={{ height: 400, width: 300, borderRadius: 15 }}
+                style={{ width: "400px", height: "400px" }}
                 src={`${items.thumbnail?.path}.${items.thumbnail?.extension}`}
                 alt=""
               />
-              <p className="text-white">{items.modified?.slice(0, 10)}</p>
             </div>
-            <div className="w-50 text-light" style={{ height: 400 }}>
+
+            <div className=" text-light p-3" style={{ height: 400 }}>
               <h1 className="bg-danger">
                 {items.title ? items.title : items.name}
               </h1>
-              <p className="my-5"> {items.description}</p>
+              <p className="my-5 ">
+                {" "}
+                {items.description
+                  ? items.description
+                  : "A diverse ensemble of superhuman heroes, each with unique powers and backgrounds, uniting to safeguard the universe from villains and existential threats"}
+              </p>
 
-              <div className="d-flex flex-column" style={{ width: "500px" }}>
+              <div className="d-flex flex-column justify-content-center  align-items-center align-items-md-start  ">
                 {items.series?.resourceURI || items.series?.collectionURI ? (
                   <button
-                    className="btn btn-outline-danger my-2"
+                    className=" btn btn-outline-danger w-75 my-2"
                     onClick={() => {
                       navigate("/series", {
                         ...(items.series?.resourceURI
@@ -72,7 +75,7 @@ export default function Chosen() {
                 )}
                 {items.comics?.resourceURI || items.comics?.collectionURI ? (
                   <button
-                    className="btn btn-outline-danger my-2"
+                    className="btn btn-outline-danger w-75 my-2"
                     onClick={() => {
                       navigate("/series", {
                         ...(items.comics?.resourceURI
@@ -89,7 +92,7 @@ export default function Chosen() {
                 {items.characters?.resourceURI ||
                 items.characters?.collectionURI ? (
                   <button
-                    className="btn btn-outline-danger my-2"
+                    className="btn btn-outline-danger w-75 my-2"
                     onClick={() => {
                       navigate("/series", {
                         ...(items.characters?.resourceURI
@@ -104,7 +107,7 @@ export default function Chosen() {
                   ""
                 )}
               </div>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex gap-5 ">
                 {items.creators?.items.slice(0, 3).map((author) => {
                   return (
                     <div className="text-primary">

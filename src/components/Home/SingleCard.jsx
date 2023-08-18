@@ -6,10 +6,9 @@ export default function Card({ item, index }) {
   return (
     <div
       key={index}
-      className="card m-2 d-flex align-items-end singleCard"
+      className="bg-succes card m-2 d-flex align-items-end singleCard"
       style={{
         width: " 17rem",
-        background: "none",
         border: "none",
         boxShadow: "3px 3px 10px black",
       }}
@@ -24,10 +23,7 @@ export default function Card({ item, index }) {
         alt=""
       />
       <div className="card-body">
-        <h5
-          className="card-title"
-          style={{ color: "yellow", fontWeight: "bold" }}
-        >
+        <h5 className="card-title text-warning" style={{ fontWeight: "bold" }}>
           {item.name
             ? item.name?.slice(0, 15)
             : item.title?.slice(0, 15)
@@ -35,8 +31,8 @@ export default function Card({ item, index }) {
             : item.fullName?.slice(0, 15)}
         </h5>
         <h6
-          className="card-title"
-          style={{ position: "absolute", bottom: 0, left: 2, color: "white" }}
+          className="card-title text-secondary"
+          style={{ position: "absolute", bottom: 0, left: 2 }}
         >
           {item.modified
             ?.slice(0, 10)

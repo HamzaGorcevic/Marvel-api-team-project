@@ -11,9 +11,7 @@ export default function HomeMain() {
   const [loader, setLoader] = useState(false);
 
   const [data, setData] = useState([]);
-  console.log(
-    ":DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDLJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ"
-  );
+
   useEffect(() => {
     async function fetch() {
       setLoader(true);
@@ -54,8 +52,8 @@ export default function HomeMain() {
     <div>
       <div style={{ top: 600, position: "relative" }}>
         <div
-          className="d-flex flex-wrap justify-content-center"
-          style={{ background: "#4169E1", height: "auto" }}
+          className="bg-succes d-flex flex-wrap justify-content-center"
+          style={{ height: "auto" }}
         >
           {loader ? (
             <div

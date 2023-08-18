@@ -6,6 +6,7 @@ import NavbarPage from "./components/Layout/navbar";
 import ContextFunction from "./components/context";
 import ApiForGenre from "./components/Series/apiForGenre";
 import Chosen from "./components/Home/ChosenStrip/chosen";
+import "./custom-theme.scss";
 function App() {
   return (
     <BrowserRouter>

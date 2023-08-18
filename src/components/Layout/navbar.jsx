@@ -14,10 +14,11 @@ export default function NavbarPage() {
   }
   return (
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-danger"
+      class=" navbar navbar-expand-lg navbar-light bg-danger p-2"
       style={{ position: "sticky", top: 1, zIndex: 3 }}
     >
       <Link
+        style={{ zIndex: "1999" }}
         className="btn btn-warning text-danger font-weight-bold"
         to={"/"}
         onClick={() => {
@@ -32,6 +33,7 @@ export default function NavbarPage() {
       </Link>
 
       <button
+        style={{ zIndex: "1999" }}
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -42,59 +44,61 @@ export default function NavbarPage() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <ul class="navbar-nav mr-auto">
-        <li
-          style={{ cursor: "pointer" }}
-          class="nav-item active"
-          onClick={() => {
-            navigate("/");
-            setGenre("comics");
-            setSearch("");
-            setValue("");
-            setPage(0);
-            setLastPage(10);
-          }}
-        >
-          <h5 class="nav-link text-warning" href="#">
-            Comics
-          </h5>
-        </li>
-        <li
-          style={{ cursor: "pointer" }}
-          class="nav-item active"
-          onClick={() => {
-            navigate("/");
-            setGenre("characters");
-            setSearch("");
-            setValue("");
-            setPage(0);
-            setLastPage(10);
-          }}
-        >
-          <h5 class="nav-link text-warning" href="#">
-            Characters
-          </h5>
-        </li>
-        <li
-          style={{ cursor: "pointer" }}
-          class="nav-item active"
-          onClick={() => {
-            navigate("/");
-            setGenre("creators");
-            setSearch("");
-            setValue("");
-            setPage(0);
-            setLastPage(10);
-          }}
-        >
-          <h5 class="nav-link text-warning" href="#">
-            Creators
-          </h5>
-        </li>
-      </ul>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
+      <div
+        class=" bg-danger  collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class=" navbar-nav mr-auto ">
+          <li
+            style={{ cursor: "pointer" }}
+            class="nav-item active"
+            onClick={() => {
+              navigate("/");
+              setGenre("comics");
+              setSearch("");
+              setValue("");
+              setPage(0);
+              setLastPage(10);
+            }}
+          >
+            <h5 class="nav-link text-warning" href="#">
+              Comics
+            </h5>
+          </li>
+          <li
+            style={{ cursor: "pointer" }}
+            class="nav-item active"
+            onClick={() => {
+              navigate("/");
+              setGenre("characters");
+              setSearch("");
+              setValue("");
+              setPage(0);
+              setLastPage(10);
+            }}
+          >
+            <h5 class="nav-link text-warning" href="#">
+              Characters
+            </h5>
+          </li>
+          <li
+            style={{ cursor: "pointer" }}
+            class="nav-item active"
+            onClick={() => {
+              navigate("/");
+              setGenre("creators");
+              setSearch("");
+              setValue("");
+              setPage(0);
+              setLastPage(10);
+            }}
+          >
+            <h5 class="nav-link text-warning" href="#">
+              Creators
+            </h5>
+          </li>
+        </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
             onChange={(el) => {
@@ -107,7 +111,7 @@ export default function NavbarPage() {
             value={value}
           />
           <Link
-            class="btn btn-outline-warning my-2 my-sm-0"
+            class="btn text-white btn-succes my-2 my-sm-0"
             onClick={(el) => {
               setPage(0);
               setLastPage(10);

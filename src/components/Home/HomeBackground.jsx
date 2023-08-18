@@ -2,14 +2,14 @@ import style from "./home.module.css";
 export default function HomePage() {
   return (
     <div className={style.imgContainer}>
-      <h1 className={style.title}>
-        Welcome <span className={style.marvel}>MARVEL</span> fans
-      </h1>
-      <img
-        style={{ width: "100%", height: "100%", position: "absolute" }}
-        src="https://wallpapers.com/images/featured/marvel-villains-2urfmojso6xgszad.jpg"
-        alt=""
-      />
+      {/* <h1
+        style={{ zIndex: "10", fontSize: "50px" }}
+        className="font-weight-bold mt-5 ml-3 text-xl text-succes position-absolute"
+      >
+        <span className="text-warning">Welcome to </span>
+        MARVEL UNIVERSE
+      </h1> */}
+      <div className={style.bgM} alt=""></div>
       <div className={style.imgEffects}></div>
     </div>
   );

@@ -8,18 +8,17 @@ export default function ChosenSerie({ items }) {
       onClick={() => {
         navigate(`/chose/${items.id}`, { state: items.resourceURI });
       }}
-      className=" ml-3"
+      className="ml-3"
       style={{
         height: 600,
-        width: 1000,
         position: "relative",
         borderRadius: 20,
-        boxShadow: "2px 2px 10px  white",
+        width: "100%",
       }}
     >
       <img
         className=""
-        style={{ height: "100%", width: 900, borderRadius: 20 }}
+        style={{ position: "relative", height: "100%", borderRadius: 20 }}
         src={`${items.thumbnail?.path}.${items.thumbnail?.extension}`}
         alt=""
       />
