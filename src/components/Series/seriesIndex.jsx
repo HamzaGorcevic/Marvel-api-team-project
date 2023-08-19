@@ -18,13 +18,6 @@ export default function SeriesPage({ loader, data, title }) {
           className="container-fluid bg-warning"
           style={{ minHeight: "100vh", paddingTop: "40px", fontWeight: "bold" }}
         >
-          <h1 className="text-white">
-            {title
-              .match(/comics|characters|series/gi)
-              .reverse()
-              .join(" of this ")
-              .slice(0, -1)}
-          </h1>
           <div
             className={`d-flex align-items-center`}
             style={{ position: "relative" }}

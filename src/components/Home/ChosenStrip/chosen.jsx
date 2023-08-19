@@ -45,7 +45,7 @@ export default function Chosen() {
               />
             </div>
 
-            <div className=" text-light p-3" style={{ height: 400 }}>
+            <div className=" text-light p-3 container" style={{ height: 400 }}>
               <h1 className="bg-danger">
                 {items.title ? items.title : items.name}
               </h1>
