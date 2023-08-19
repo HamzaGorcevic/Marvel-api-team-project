@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/HamzaGorcevic/Marvel-api-team-project/static/css/main.47041ff1.css",
-    "main.js": "/HamzaGorcevic/Marvel-api-team-project/static/js/main.b3d6fb1d.js",
-    "static/js/787.28cb0dcd.chunk.js": "/HamzaGorcevic/Marvel-api-team-project/static/js/787.28cb0dcd.chunk.js",
-    "static/media/MarvelBG.jpg": "/HamzaGorcevic/Marvel-api-team-project/static/media/MarvelBG.cfe78d6bd3dce4bf1c13.jpg",
-    "static/media/spider.jpg": "/HamzaGorcevic/Marvel-api-team-project/static/media/spider.4f7c72ef4b7d59565e52.jpg",
-    "index.html": "/HamzaGorcevic/Marvel-api-team-project/index.html",
-    "main.47041ff1.css.map": "/HamzaGorcevic/Marvel-api-team-project/static/css/main.47041ff1.css.map",
-    "main.b3d6fb1d.js.map": "/HamzaGorcevic/Marvel-api-team-project/static/js/main.b3d6fb1d.js.map",
-    "787.28cb0dcd.chunk.js.map": "/HamzaGorcevic/Marvel-api-team-project/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/Marvel-api-team-project/static/css/main.651cab3e.css",
+    "main.js": "/Marvel-api-team-project/static/js/main.48783e35.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Marvel-api-team-project/static/js/787.28cb0dcd.chunk.js",
+    "static/media/MarvelBG.jpg": "/Marvel-api-team-project/static/media/MarvelBG.cfe78d6bd3dce4bf1c13.jpg",
+    "static/media/spider.jpg": "/Marvel-api-team-project/static/media/spider.4f7c72ef4b7d59565e52.jpg",
+    "index.html": "/Marvel-api-team-project/index.html",
+    "main.651cab3e.css.map": "/Marvel-api-team-project/static/css/main.651cab3e.css.map",
+    "main.48783e35.js.map": "/Marvel-api-team-project/static/js/main.48783e35.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Marvel-api-team-project/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47041ff1.css",
-    "static/js/main.b3d6fb1d.js"
+    "static/css/main.651cab3e.css",
+    "static/js/main.48783e35.js"
   ]
 }
