@@ -38,17 +38,3 @@
   padding: 10px;
   border-radius: 10px;
 }
-.title:hover {
-  background-color: yellow;
-  transition: all 1s ease;
-}
-.title:hover .marvel {
-  transition: 1s;
-}
-.title:hover {
-  color: red;
-}
-.marvel {
-  font-weight: bolder;
-  color: red;
-}

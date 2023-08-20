@@ -3,18 +3,19 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 
 import spider from "./spider.jpg";
+import { REACT_APP_API_KEY } from "../../config";
 export default function Chosen() {
   const navigate = useNavigate();
   const location = useLocation();
   const [data, setData] = useState([]);
   const [url, setUrl] = useState(`${location.state}`);
-  console.log(url, "https or http");
+
   useEffect(() => {
     async function fetch() {
       let res = await axios.get(url, {
         params: {
           ts: "1",
-          apikey: "6dd47b36beb6cba63846697b5616e93e",
+          apikey: REACT_APP_API_KEY,
           hash: "39e75edb8427b1e58fa9052ef6640cb3",
         },
       });

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Card from "./SingleCard";
 import { MyContext } from "../context";
+import { REACT_APP_API_KEY } from "../config";
 
 export default function HomeMain() {
   const { search, genre, setPage, setLastPage, page, lastPage } =
@@ -10,7 +11,6 @@ export default function HomeMain() {
   const [loader, setLoader] = useState(false);
 
   const [data, setData] = useState([]);
-
   useEffect(() => {
     async function fetch() {
       setLoader(true);
@@ -21,7 +21,7 @@ export default function HomeMain() {
           params: {
             limit: lastPage,
             ts: "1",
-            apikey: "6dd47b36beb6cba63846697b5616e93e",
+            apikey: REACT_APP_API_KEY,
             hash: "39e75edb8427b1e58fa9052ef6640cb3",
             ...(search && genre !== "comics"
               ? { nameStartsWith: search }
