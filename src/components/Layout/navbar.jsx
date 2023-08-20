@@ -20,7 +20,7 @@ export default function NavbarPage() {
       <Link
         style={{ zIndex: "1999" }}
         className="btn btn-warning text-danger font-weight-bold"
-        to={"/"}
+        to={"/Marvel-api-team-project/"}
         onClick={() => {
           setGenre("characters");
           setSearch("");
@@ -54,7 +54,7 @@ export default function NavbarPage() {
             style={{ cursor: "pointer" }}
             class="nav-item active"
             onClick={() => {
-              navigate("/");
+              navigate("/Marvel-api-team-project");
               setGenre("comics");
               setSearch("");
               setValue("");
@@ -70,7 +70,7 @@ export default function NavbarPage() {
             style={{ cursor: "pointer" }}
             class="nav-item active"
             onClick={() => {
-              navigate("/");
+              navigate("/Marvel-api-team-project");
               setGenre("characters");
               setSearch("");
               setValue("");
@@ -86,7 +86,7 @@ export default function NavbarPage() {
             style={{ cursor: "pointer" }}
             class="nav-item active"
             onClick={() => {
-              navigate("/");
+              navigate("/Marvel-api-team-project");
               setGenre("creators");
               setSearch("");
               setValue("");
@@ -115,7 +115,7 @@ export default function NavbarPage() {
             onClick={(el) => {
               setPage(0);
               setLastPage(10);
-              navigate("/");
+              navigate("/Marvel-api-team-project/");
               submitChanger();
               el.preventDefault();
             }}

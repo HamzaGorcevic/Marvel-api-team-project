@@ -14,9 +14,15 @@ function App() {
         <HomePage />
         <NavbarPage />
         <Routes>
-          <Route path="/" element={<HomeMain />} />
-          <Route path="/chose/:id" element={<Chosen />} />
-          <Route path="series" element={<ApiForGenre />} />
+          <Route path="/Marvel-api-team-project" element={<HomeMain />} />
+          <Route
+            path="/Marvel-api-team-project/chose/:id"
+            element={<Chosen />}
+          />
+          <Route
+            path="/Marvel-api-team-project/series"
+            element={<ApiForGenre />}
+          />
         </Routes>
       </ContextFunction>
     </BrowserRouter>

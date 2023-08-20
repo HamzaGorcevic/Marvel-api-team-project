@@ -15,7 +15,9 @@ export default function Card({ item, index }) {
     >
       <img
         onClick={() => {
-          navigate(`/chose/${item.id}`, { state: item.resourceURI });
+          navigate(`Marvel-api-team-project/chose/${item.id}`, {
+            state: item.resourceURI,
+          });
         }}
         style={{ height: 300, boxShadow: "3px 3px 10px black" }}
         className="card-img-top"
