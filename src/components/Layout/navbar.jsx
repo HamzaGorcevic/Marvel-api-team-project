@@ -15,12 +15,12 @@ export default function NavbarPage() {
   return (
     <nav
       class=" navbar navbar-expand-lg navbar-light bg-danger p-2"
-      style={{ position: "sticky", top: 1, zIndex: 3 }}
+      style={{ position: "sticky", top: 1, zIndex: 10 }}
     >
       <Link
         style={{ zIndex: "1999" }}
         className="btn btn-warning text-danger font-weight-bold"
-        to={"/Marvel-api-team-project/"}
+        to={"/Marvel-api-team-project"}
         onClick={() => {
           setGenre("characters");
           setSearch("");
@@ -115,7 +115,7 @@ export default function NavbarPage() {
             onClick={(el) => {
               setPage(0);
               setLastPage(10);
-              navigate("/Marvel-api-team-project/");
+              navigate("/Marvel-api-team-project");
               submitChanger();
               el.preventDefault();
             }}

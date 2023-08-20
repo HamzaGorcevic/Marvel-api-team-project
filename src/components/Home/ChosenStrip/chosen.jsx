@@ -61,7 +61,7 @@ export default function Chosen() {
                   <button
                     className=" btn btn-outline-danger w-75 my-2"
                     onClick={() => {
-                      navigate("Marvel-api-team-project/series", {
+                      navigate("/series", {
                         ...(items.series?.resourceURI
                           ? { state: items.series?.resourceURI }
                           : { state: items.series.collectionURI }),
@@ -77,7 +77,7 @@ export default function Chosen() {
                   <button
                     className="btn btn-outline-danger w-75 my-2"
                     onClick={() => {
-                      navigate("Marvel-api-team-project/series", {
+                      navigate("/series", {
                         ...(items.comics?.resourceURI
                           ? { state: items.comics?.resourceURI }
                           : { state: items.comics.collectionURI }),
@@ -94,7 +94,7 @@ export default function Chosen() {
                   <button
                     className="btn btn-outline-danger w-75 my-2"
                     onClick={() => {
-                      navigate("Marvel-api-team-project/series", {
+                      navigate("/series", {
                         ...(items.characters?.resourceURI
                           ? { state: items.characters?.resourceURI }
                           : { state: items.characters.collectionURI }),

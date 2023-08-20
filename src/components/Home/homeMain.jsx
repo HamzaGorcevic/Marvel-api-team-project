@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Card from "./SingleCard";
 import { MyContext } from "../context";
-import { Circles } from "react-loader-spinner";
 
 export default function HomeMain() {
   const { search, genre, setPage, setLastPage, page, lastPage } =
@@ -55,33 +54,8 @@ export default function HomeMain() {
           className="bg-succes d-flex flex-wrap justify-content-center"
           style={{ height: "auto" }}
         >
-          {loader ? (
-            <div
-              className="d-flex align-items-center justify-content-center"
-              style={{
-                width: "100%",
-                height: "100vh",
-                position: "absolute",
-                bottom: "0",
-                background: "#fcfcfc59",
-                zIndex: 10,
-              }}
-            >
-              <Circles
-                height="80"
-                width="80"
-                radius="9"
-                color="red"
-                ariaLabel="loading"
-                wrapperStyle
-                wrapperClass
-              />
-            </div>
-          ) : (
-            ""
-          )}
           {data.map((item, index) => {
-            return <Card item={item} index={index} />;
+            return <Card loader={loader} item={item} index={index} />;
           })}
           <div className="d-flex p-4 justify-content-around w-100">
             <button

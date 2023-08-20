@@ -6,7 +6,7 @@ export default function ChosenSerie({ items }) {
   return (
     <div
       onClick={() => {
-        navigate(`Marvel-api-team-project/chose/${items.id}`, {
+        navigate(`/chose/${items.id}`, {
           state: items.resourceURI,
         });
       }}
@@ -15,12 +15,17 @@ export default function ChosenSerie({ items }) {
         height: 600,
         position: "relative",
         borderRadius: 20,
-        width: "100%",
+        minWidth: "60%",
       }}
     >
       <img
         className=""
-        style={{ position: "relative", height: "100%", borderRadius: 20 }}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          borderRadius: 20,
+        }}
         src={`${items.thumbnail?.path}.${items.thumbnail?.extension}`}
         alt=""
       />
@@ -39,9 +44,9 @@ export default function ChosenSerie({ items }) {
       ></div>
       <div
         className=" text-light"
-        style={{ position: "absolute ", top: "60%", zIndex: 3, left: 20 }}
+        style={{ position: "absolute ", bottom: "10%", zIndex: 3, left: 20 }}
       >
-        <h3>{items.title ? items.title : items.name}</h3>
+        <h3 className="container ">{items.title ? items.title : items.name}</h3>
       </div>
     </div>
   );
