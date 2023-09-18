@@ -1,6 +1,11 @@
 # Getting Started with Marvel Universe Explorer
 
 Welcome to the Marvel Universe Explorer! This project is designed to provide you with an immersive experience into the vast Marvel universe. Explore information about your favorite characters, comics, and series in one convenient place. This project is powered by the Marvel API to bring you up-to-date and accurate details.
+## Image
+![desktopMarvel](https://github.com/HamzaGorcevic/Marvel-api-team-project/assets/88393813/3fc8aee9-5b1b-462c-868c-b972e1d37ed4)
+
+## Url
+https://hamzagorcevic.github.io/Marvel-api-team-project/
 
 ## Available Scripts
 
